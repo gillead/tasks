@@ -4,6 +4,7 @@ use App\Http\Controllers\DailyTaskController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\DailyTaskStatController;
+use App\Http\Controllers\ArterialPressureController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +33,5 @@ Route::post('daily_task_stats/store', [DailyTaskStatController::class, 'store'])
     ->name('daily_task_stats.store');
 Route::delete('daily_task_stats/destroy/{id}', [DailyTaskStatController::class, 'destroy'])
     ->name('daily_task_stats.destroy');
+// АД
+Route::resource('arterial_pressures', ArterialPressureController::class);

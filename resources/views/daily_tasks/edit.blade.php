@@ -24,6 +24,6 @@
             <textarea class="form-control" id="description" name="description"
                       placeholder="Описание">@if($task->description){{ $task->description }}@endif</textarea>
         </div>
-        <button type="submit" class="btn btn-primary mt-3">Добавить</button>
+        <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
     </form>
 @endsection

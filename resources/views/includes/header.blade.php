@@ -14,6 +14,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('daily_tasks.index') }}">Ежедневные задачи</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('arterial_pressures.index') }}">Календарь АД</a>
+                </li>
             </ul>
         </div>
     </nav>

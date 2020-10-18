@@ -54,6 +54,6 @@
             <input type="checkbox" class="form-check-input" id="status" name="status" @if($task->value)checked @endif>
             <label class="form-check-label" for="status">Статус</label>
         </div>
-        <button type="submit" class="btn btn-primary mt-3">Добавить</button>
+        <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
     </form>
 @endsection
