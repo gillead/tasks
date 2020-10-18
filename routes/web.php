@@ -1,7 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DailyTaskController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\DailyTaskStatController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +17,18 @@ use App\Http\Controllers\TaskController;
 |
 */
 
-Route::get('/', [TaskController::class, 'index']);
-
+Route::get('/', [IndexController::class, 'index'])
+    ->name('home');
+// Задачи
+Route::get('tasks/archive', [TaskController::class, 'archive'])
+    ->name('tasks.archive');
 Route::resource('tasks', TaskController::class);
+// Ежедневные задачи
+Route::resource('daily_tasks', DailyTaskController::class);
+// Статистика по ежедневным задачам
+Route::get('daily_task_stats/index', [DailyTaskStatController::class, 'index'])
+    ->name('daily_task_stats.index');
+Route::post('daily_task_stats/store', [DailyTaskStatController::class, 'store'])
+    ->name('daily_task_stats.store');
+Route::delete('daily_task_stats/destroy/{id}', [DailyTaskStatController::class, 'destroy'])
+    ->name('daily_task_stats.destroy');

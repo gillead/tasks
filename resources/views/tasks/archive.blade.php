@@ -1,22 +1,7 @@
 @extends('layouts.default')
 @section('content')
-    @if ($message = Session::get('success'))
-        <div class="alert alert-success alert-block">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            @if(is_array($message))
-                @foreach ($message as $m)
-                    {{ $m }}
-                @endforeach
-            @else
-                {{ $message }}
-            @endif
-        </div>
-    @endif
     <div class="panel panel-default">
-        <div class="panel-heading">
-            <a href="{{ route('tasks.create') }}" class="btn btn-success">Добавить задачу</a>
-            <a href="{{ route('tasks.archive') }}" class="btn btn-primary">Архив</a>
-        </div>
+        <div class="panel-heading"><a href="{{ route('tasks.index') }}" class="btn btn-primary">К списку задач</a></div>
         <div class="panel-body">
             <table class="table">
                 <thead>
